@@ -83,7 +83,7 @@ def classify_support_request(ticket_contents):
 
     return reasoning, intent
 
-@app.route('/classify', methods=['POST'])
+@app.route('/classify', methods=['POST', 'GET'])
 def classify_ticket():
     if not request.is_json:
         return jsonify({"error": "Content-Type must be application/json"}), 400
